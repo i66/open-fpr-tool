@@ -1,0 +1,20 @@
+{
+  "name": "open-floor-plan",
+  "main": "index.html",
+  "version": "0.0.1",
+  "single-instance": true,
+  "window": {
+    "title": "open-floor-plan v0.01",
+    "toolbar": true,
+    "frame": true,
+    "width": 1920,
+    "height": 1080,
+    "min_width": 1024,
+    "min_height": 600,
+    "fullscreen": false
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": "--child-clean-exit --allow-file-access-from-files"
+}
