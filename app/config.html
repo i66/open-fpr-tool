@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<p class="case_p" style="font-size:20px">業主描述</p>
+<br>
+<table id="configOwner">
+    <tr>
+        <th>Key </th>
+        <th>Data</th>
+    </tr>
+    <tr>
+        <td>業主描述</td>
+        <td><textarea id="configOwnDes" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td>電話</td>
+        <td><textarea id="configOwnTel" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><textarea id="configOwnEmail" cols="50"></textarea></td>
+    </tr>
+</table>
+
+<br>
+
+<p class="case_p" style="font-size:20px">案場描述</p>
+<br>
+<table id="configCase">
+    <tr>
+        <th>Key </th>
+        <th>Data</th>
+    </tr>
+    <tr>
+        <td>案場描述</td>
+        <td><textarea id="configCaseDes" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td>區域</td>
+        <td><textarea id="configCaseDict" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td>地址</td>
+        <td><textarea id="configCaseAddr" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td>電話</td>
+        <td><textarea id="configCaseTel" cols="50"></textarea></td>
+    </tr>
+    <tr>
+        <td>負責人</td>
+        <td><textarea id="configCaseOwner" cols="50"></textarea></td>
+    </tr>
+</table>
+<br>
+<p class="case_p" style="font-size:15px">載入設定</p>
+<input type="file" id="caseLoad" />
+<hr>
+<button id="configSave" class="case_button_style"> 儲存設定 </button>
+&nbsp;&nbsp;
+<button id="configGen" class="case_button_style"> 產生輸出 </button>
+
+</body>
+
+<!--Library-->
+<script src="js/config.js"></script>
+
+</html>

@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title></title>
-<!--   <link href="styles/main.css" rel="stylesheet" type="text/css" />
-  <link href="styles/theme.css" rel="stylesheet" type="text/css" /> -->
-</head>
-<body class="no-cursor">
-<div class="main"></div>
-<script src="index.js"></script>
-<!--node ctrl area-->
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="style.css" rel="stylesheet">
+<body>
 
+<div class="wrapper">
+	<header class="header">
+		<strong>Project:</strong>
+		&nbsp;
+		<strong id="projName"></strong>
+	</header><!-- .header-->
+
+	<div class="middle">
+		<div class="container">
+			<main class="content" id="main_content">
+				<strong>Weclome to use the open floor planner. It is a simple tool to generate the dynamic</strong>
+			</main><!-- .content -->
+		</div><!-- .container-->
+
+		<aside class="left-sidebar">
+
+
+			<button id="caseConfig" class="case_button_style">Config</button>
+			<br/> -----------------------
+
+			<p class="case_p">Floor</p>
+			<br/> -----------------------
+
+			<div></div>
+		</aside><!-- .left-sidebar -->
+
+	</div><!-- .middle-->
+</div><!-- .wrapper -->
 </body>
+
+<!-- Library-->
+<script src="plugins/jquery.min.js"></script>
+<!-- Self-Library-->
+<script src="js/data.js"></script>
+<script src="js/settings.js"></script>
+</head>
+
 </html>

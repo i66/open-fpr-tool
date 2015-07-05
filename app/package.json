@@ -7,8 +7,8 @@
     "title": "open-floor-plan v0.01",
     "toolbar": true,
     "frame": true,
-    "width": 1920,
-    "height": 1080,
+    "width": 1280,
+    "height": 800,
     "min_width": 1024,
     "min_height": 600,
     "fullscreen": false
