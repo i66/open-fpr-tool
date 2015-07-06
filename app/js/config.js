@@ -30,28 +30,69 @@ var fpr = window.fpr || {};
     });
     // onCaseSave change
     $("#configSave").click(function(evt){
-        //TODO: Save the Config Settings.
-        console.log("hello worlddddd");
         var ownData = fpr.OwnData;
         var caseData = fpr.CaseData;
-        ////TODO: ID generation.
-        //if (!ownData.id){
-        //    var tempID = createUUID();
-        //    console.log("[San] create the temp ID:"+ tempID);
-        //}
-        //if (!caseData.id){
-        //    var tempID = createUUID();
-        //    console.log("[San] create the temp ID:"+ tempID);
-        //}
 
+        //Fill in the ownData
+        if (!ownData.id){
+            var tempID = createUUID();
+            ownData.id = tempID;
+        }
+        ownData.description = $("#configOwnDes").val();
+        ownData.tel = $("#configOwnTel").val();
+        ownData.email = $("#configOwnEmail").val();
 
+        //Fill in the caseData
+        if (!caseData.id){
+            var tempID = createUUID();
+            caseData.id = tempID;
+        }
+        caseData.description = $("#configCaseDes").val();
+        caseData.district = $("#configCaseDict").val();
+        caseData.address = $("#configCaseAddr").val();
+        caseData.tel = $("#configCaseTel").val();
+        caseData.owner = $("#configCaseOwner").val();
     });
+
 
     // onCaseGen change
     $("#configGen").click(function(evt){
-        var url = $(this).val();
-        //TODO: Case Generation
-        console.log("[San] On Open file"+ url);
+        var createJsonFileAsync = fpr.createJsonFileAsync;
+        var generateZipFile = fpr.generateZipFile;
+        var ownData = fpr.OwnData;
+        var caseData = fpr.CaseData;
+
+        if (!createJsonFileAsync)
+        {
+            console.log("Cannot gen the target file due to the error message.");
+            return;
+        }
+        var joinList =[];
+        var ownPromise = createJsonFileAsync(ownData, 'own.json');
+        joinList.push(ownPromise);
+        var casePromise = createJsonFileAsync(caseData, 'case.json');
+        joinList.push(casePromise);
+
+        WinJS.Promise.join(joinList).then(function finishJSON(evt){
+            console.log("Gen. the related json finished.\n Start to gen. the config.zip");
+            generateZipFile();
+            console.log("Gen. the config zip finished");
+        }).then(null, function error(evt){
+            console.log("Gen. the config file failed. Reason: "+ JSON.stringify(evt));
+        });
+    });
+
+    $("#configTest").click(function(evt){
+
+        $("#configOwnDes").val("瑞德測試");
+        $("#configOwnTel").val("02-12345678");
+        $("#configOwnEmail").val("qoo@hexsave.com");
+
+        $("#configCaseDes").val("瑞德測試案場");
+        $("#configCaseDict").val("中正區");
+        $("#configCaseAddr").val("瑞德辦公室25F");
+        $("#configCaseTel").val("02-353424252");
+        $("#configCaseOwner").val("Qoo");
     });
 
 })();
