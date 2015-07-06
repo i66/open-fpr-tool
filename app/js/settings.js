@@ -6,8 +6,15 @@ var fpr = window.fpr || {};
 (function () {
     'use strict';
     $(document).ready(function(){
-        $("#caseConfig").click(function(evt){
+        $("#configPage").click(function(evt){
+            //TODO:
+
             $('#main_content').load("config.html");
+        });
+
+        $("#addFloor").click(function(evt){
+           //TODO: Store the local settings
+            $("#main_content").load("floor.html");
         });
 
     });

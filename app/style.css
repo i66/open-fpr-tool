@@ -143,6 +143,65 @@ body {
 	color: #00AA00;
 }
 
+
+/*Nav. container settings*/
+
+#navcontainer
+{
+	background: #4593AA;
+	width: 100%;
+	margin: 0 auto;
+	font-family: georgia, serif;
+	font-size: 15px;
+	text-align: left;
+	text-transform: lowercase;
+}
+
+ul#navlist
+{
+	text-align: left;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	width: 100%;
+}
+
+ul#navlist li
+{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+ul#navlist li a
+{
+	display: block;
+	width: 100%;
+	padding: 0.5em 0 0.5em 0;
+	border-width: 1px;
+	border-color: #00AA00;
+	border-style: solid;
+	color: #777;
+	text-decoration: none;
+	background: #75C3DA;
+}
+
+#navcontainer>ul#navlist li a { width: auto; }
+
+ul#navlist li#active a
+{
+	background: #f0e7d7;
+	color: #000080;
+}
+
+ul#navlist li a:hover, ul#navlist li#active a:hover
+{
+	color: #000080;
+	background: transparent;
+	border-color: #aaab9c #fff #fff #ccc;
+}
+
+/*Config path Settings*/
 table {
 	width:100%;
 }
@@ -164,4 +223,6 @@ table th	{
 	background-color: black;
 	color: white;
 }
+
+
 

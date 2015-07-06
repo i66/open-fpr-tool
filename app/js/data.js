@@ -26,9 +26,18 @@ var fpr = window.fpr || {};
         //    }
     };
 
+    var FloorData = {};
+
+
+    var currentFloor = undefined;
+
+
+
     // for the global namespace
     fpr.OwnData = OwnerData;
     fpr.CaseData = CaseData;
+    fpr.FloorData = FloorData;
+    fpr.currentFloor = currentFloor;
     fpr.CurrentProject = CurrentProject;
 
 })();
