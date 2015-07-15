@@ -3,8 +3,103 @@
 <head>
     <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
-Hello Floor Page.
+<p class="case_p" style="font-size:20px">樓層資訊</p>
+<br>
+<table id="floorInfo">
+    <tr>
+        <th>樓層ID</th>
+        <th>樓層描述</th>
+        <th>平面資訊圖</th>
+        <th>動作</th>
+    </tr>
+    <tr>
+        <td><textarea id="floorInfoId" cols="10" readonly></textarea></td>
+        <td><textarea id="floorInfoDes" cols="50"></textarea></td>
+        <td><input type="file" id="floorInfoLoad"/> <br> <textarea id="floorInfoPath" cols="50"></textarea></td>
+        <td><button id="floorSave" class="case_button_style"> 儲存 </button></td>
+    </tr>
+</table>
+
+<canvas id="floorCanvas" width="800" height="600"></canvas>
+<table id="floorNodeList">
+    <tr>
+        <th>ID</th>
+        <th>型態</th>
+        <th>擴散</th>
+        <th>x</th>
+        <th>y</th>
+        <th>z</th>
+        <th>樓層</th>
+        <th>面向方向</th>
+        <th>出口方向</th>
+        <th>動作</th>
+    </tr>
+    <tr>
+        <td><textarea id="nodeID" cols="10"></textarea></td>
+        <td><textarea id="nodeType" cols="10"></textarea></td>
+        <td><textarea id="nodeDif" cols="10"></textarea></td>
+        <td><textarea id="nodeX" cols="10"></textarea></td>
+        <td><textarea id="nodeY" cols="10"></textarea></td>
+        <td><textarea id="nodeZ" cols="10"></textarea></td>
+        <td><textarea id="nodeFloor" cols="10" readonly></textarea></td>
+        <td><textarea id="nodeFaceDir" cols="10"></textarea></td>
+        <td><textarea id="nodeExitDir" cols="10"></textarea></td>
+        <td><button id="nodeAM" class="case_button_style">新增/修改</button><br>
+            <button id="nodeDel" class="case_button_style">刪除</button></td>
+    </tr>
+</table>
+<br><br>
+<table id="floorEdgeList">
+    <tr>
+        <th>ID</th>
+        <th>距離</th>
+        <th>起點</th>
+        <th>終點</th>
+        <th>動作</th>
+    </tr>
+    <tr>
+        <td><textarea id="edgeID" cols="10"></textarea></td>
+        <td><textarea id="edgeDis" cols="10"></textarea></td>
+        <td><textarea id="edgeSource" cols="10"></textarea></td>
+        <td><textarea id="edgeTarget" cols="10"></textarea></td>
+        <td><button id="edgeAM" class="case_button_style">新增/修改</button><br>
+            <button id="edgeDel" class="case_button_style">刪除</button></td>
+    </tr>
+</table>
+<br><br>
+<table id="floorRemoteList">
+
+    <!--dataDict["distance"] = distance;-->
+    <!--dataDict["local-node"] = localNode;-->
+    <!--dataDict["remote-floor"] = remoteFloor;-->
+    <!--dataDict["remote-node_id"] = remoteNodeid;-->
+    <!--dataDict["remote-node_x"] = remoteX;-->
+    <!--dataDict["remote-node_y"] = remoteY;-->
+    <!--dataDict["remote-node_z"] = remoteZ;-->
+    <tr>
+        <th>距離</th>
+        <th>區域ID</th>
+        <th>遠端樓層ID</th>
+        <th>遠端ID</th>
+        <th>遠端X</th>
+        <th>遠端Y</th>
+        <th>遠端Z</th>
+    </tr>
+    <tr>
+        <td><textarea id="remoteDis" cols="10"></textarea></td>
+        <td><textarea id="remoteLocalID" cols="10"></textarea></td>
+        <td><textarea id="remoteFloor" cols="10"></textarea></td>
+        <td><textarea id="remoteTarID" cols="10"></textarea></td>
+        <td><textarea id="remoteX" cols="10"></textarea></td>
+        <td><textarea id="remoteY" cols="10"></textarea></td>
+        <td><textarea id="remoteZ" cols="10"></textarea></td>
+
+        <td><button id="remoteAM" class="case_button_style">新增/修改</button><br>
+            <button id="remoteDel" class="case_button_style">刪除</button></td>
+    </tr>
+</table>
 </body>
 
 <!--Node Library-->

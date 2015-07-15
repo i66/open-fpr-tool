@@ -37,7 +37,7 @@ var fpr = window.fpr || {};
         });
     };
 
-    function genereateZipFile(){
+    function generateZipFile(){
         var AdmZip = require('adm-zip');
         var zip = new AdmZip();
         // add local file
@@ -52,8 +52,24 @@ var fpr = window.fpr || {};
         zip.writeZip(configZipPath);
     };
 
+    function saveImageFileAsync(sourceUrl, targetFile){
+        var outputFilePath = path.join(outputPath, targetFile);
+        var writeStream = fs.createWriteStream(outputFilePath);
+
+        return new WinJS.Promise(function(compl, err){
+            writeStream.on('finish', function() {
+                compl(outputFilePath);
+            });
+            writeStream.on('error', function(){
+                err(outputFilePath);
+            });
+            fs.createReadStream(sourceUrl).pipe(writeStream);
+        });
+    };
+
     // the export files
     fpr.createJsonFileAsync = createJsonFileAsync;
-    fpr.generateZipFile = genereateZipFile;
+    fpr.generateZipFile = generateZipFile;
+    fpr.saveImageFileAsync = saveImageFileAsync;
 
 })();

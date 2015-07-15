@@ -64,11 +64,11 @@ var fpr = window.fpr || {};
 
         if (!createJsonFileAsync)
         {
-            console.log("Cannot gen the target file due to the error message.");
+            console.log("Cannot gen. the target file due to the error message.");
             return;
         }
         var joinList =[];
-        var ownPromise = createJsonFileAsync(ownData, 'own.json');
+        var ownPromise = createJsonFileAsync(ownData, 'owner.json');
         joinList.push(ownPromise);
         var casePromise = createJsonFileAsync(caseData, 'case.json');
         joinList.push(casePromise);
